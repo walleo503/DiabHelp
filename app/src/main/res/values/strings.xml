@@ -1,0 +1,81 @@
+<resources>
+    <string name="app_name">DiabHelp</string>
+
+    <!-- General -->
+    <string name="salud_y_vida">Salud y Vida</string>
+    <string name="diabhelp">DiabHelp</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="guardar">Guardar</string>
+    <string name="icono">/</string>
+
+    <!-- Login -->
+    <string name="usuario">Usuario</string>
+    <string name="crear_usuario">Crear usuario</string>
+    <string name="login">Login</string>
+    <string name="usuario_o_correo">Usuario o Correo</string>
+    <string name="contrase_a">Contraseña</string>
+    <string name="ingresar">Ingresar</string>
+
+    <!-- Perfil -->
+    <string name="edad">Edad</string>
+    <string name="fecha_de_nacimiento">Fecha de nacimiento</string>
+    <string name="tel_fono">Teléfono</string>
+    <string name="correo">Correo</string>
+    <string name="guardar_perfil">Guardar Perfil</string>
+
+    <!-- Spinners -->
+    <string-array name="tipos_diabetes">
+        <item>Tipo de diabetes</item>
+        <item>Tipo 1</item>
+        <item>Tipo 2</item>
+        <item>Gestacional</item>
+        <item>Prediabetes</item>
+    </string-array>
+
+    <string-array name="ratio_sensible">
+        <item>Ratio Sensible</item>
+        <item>Sensible</item>
+        <item>Promedio</item>
+        <item>Resistente</item>
+    </string-array>
+
+    <string-array name="sensibilidad">
+        <item>Sensibilidad</item>
+        <item>Muy sensible</item>
+        <item>Sensibilidad normal</item>
+        <item>Resistencia moderada</item>
+        <item>Muy resistente</item>
+    </string-array>
+
+    <string name="informaci_n">Información</string>
+    <string name="mensaje_info">
+        Importante\n\nEsta aplicación fue creada con la intención de apoyar y brindar una ayuda a aquellos que
+        sufren de esta enfermedad o estén apoyando a algún conocido o familiar que la padece, no obstante, la
+        aplicación no remplaza o elimina la necesidad de apoyo médico real.\n\nPor eso es importante que todos los
+        datos que se ingresarán en el perfil de usuario, deben ser proporcionados por un médico con licencia o un
+        especialista en el tema, y seguir sus instrucciones.
+    </string>
+
+
+    <string name="factor_de_sensibilidad">Factor de Sensibilidad</string>
+    <string name="f_rmula">Fórmula</string>
+    <string name="factor_glucosa_inicial_glucosa_final_1">Factor = (Glucosa inicial - Glucosa final) / 1</string>
+    <string name="calcular">Calcular</string>
+    <string name="glucosa_inicial">Glucosa inicial:</string>
+    <string name="ingrese_glucosa_inicial_mg_dl">Ingrese glucosa inicial (mg/dL)</string>
+    <string name="glucosa_final">Glucosa final:</string>
+    <string name="ingrese_glucosa_final_mg_dl">Ingrese glucosa final (mg/dL)</string>
+
+
+    <string name="pasos_a_seguir">Pasos a seguir</string>
+    <string name="_1_medir_glucosa_en_ayunas">1. Medir glucosa en ayunas</string>
+    <string name="sin_haber_comido_por_4_horas">(sin haber comido por 4 horas)</string>
+    <string name="_2_aplicar_1_unidad_de_insulina_r_pida">2. Aplicar 1 unidad de insulina rápida</string>
+    <string name="_3_no_comer_nada_por_2_3_horas">3. No comer nada por 2-3 horas</string>
+    <string name="_4_medir_glucosa_nuevamente">4. Medir glucosa nuevamente</string>
+
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+</resources>

@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/fondo2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/factor_de_sensibilidad"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="@color/letras"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/f_rmula"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/letras"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/factor_glucosa_inicial_glucosa_final_1"
+            android:textSize="14sp"
+            android:textColor="@color/letrasdes"
+            android:background="@color/fondodes"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/pasos_a_seguir"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/letras"
+            android:layout_marginBottom="10dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/fondodes"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_1_medir_glucosa_en_ayunas"
+                android:textSize="14sp"
+                android:textColor="@color/letrasdes"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/sin_haber_comido_por_4_horas"
+                android:textSize="12sp"
+                android:textColor="@color/letrasdes"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_2_aplicar_1_unidad_de_insulina_r_pida"
+                android:textSize="14sp"
+                android:textColor="@color/letrasdes"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_3_no_comer_nada_por_2_3_horas"
+                android:textSize="14sp"
+                android:textColor="@color/letrasdes"
+                android:layout_marginBottom="8dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/_4_medir_glucosa_nuevamente"
+                android:textSize="14sp"
+                android:textColor="@color/letrasdes"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/glucosa_inicial"
+            android:textSize="14sp"
+            android:textColor="@color/letras"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etGlucosaInicial"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/ingrese_glucosa_inicial_mg_dl"
+            android:inputType="number"
+            android:background="@color/fondodes"
+            android:padding="12dp"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/glucosa_final"
+            android:textSize="14sp"
+            android:textColor="@color/letras"
+            android:layout_marginBottom="8dp"/>
+
+        <EditText
+            android:id="@+id/etGlucosaFinal"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/ingrese_glucosa_final_mg_dl"
+            android:inputType="number"
+            android:background="@color/fondodes"
+            android:padding="12dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/tvResultado"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:layout_marginBottom="20dp"
+            android:gravity="center"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnCalcular"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="@string/calcular"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                android:layout_marginEnd="8dp"/>
+
+            <Button
+                android:id="@+id/btnGuardarFactor"
+                android:layout_width="0dp"
+                android:layout_height="45dp"
+                android:layout_weight="1"
+                android:text="@string/guardar"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
