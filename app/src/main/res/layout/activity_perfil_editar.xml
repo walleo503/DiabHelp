@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
@@ -7,288 +8,278 @@
     android:layout_height="match_parent"
     tools:context=".Perfil_editar">
 
-    <!-- Contenido principal -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:background="@color/fondo">
 
-        <!-- Toolbar -->
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
+        <!-- Fila superior: Edad, Foto, Fecha nacimiento -->
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/fondo2"
-            app:title="Mi Perfil"
-            app:titleTextColor="@color/letras"/>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="12dp"
+            android:layout_marginStart="56dp">
+
+            <!-- Edad -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Edad"
+                    android:textSize="12sp"
+                    android:textColor="@color/letras"
+                    android:textStyle="italic"/>
+
+                <EditText
+                    android:id="@+id/etEdad"
+                    android:layout_width="80dp"
+                    android:layout_height="36dp"
+                    android:hint="26"
+                    android:inputType="number"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:paddingStart="8dp"/>
+            </LinearLayout>
+
+            <!-- Foto de perfil -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/ivFotoPerfil"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/logo"
+                    android:scaleType="centerCrop"
+                    android:background="@color/fondo2"
+                    android:contentDescription="Foto de perfil"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:onClick="seleccionarFoto"
+                    android:foreground="?attr/selectableItemBackgroundBorderless"
+                    />
+
+            </LinearLayout>
+
+            <!-- Fecha nacimiento -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha de nacimiento"
+                    android:textSize="12sp"
+                    android:textColor="@color/letras"
+                    android:textStyle="italic"/>
+
+                <EditText
+                    android:id="@+id/etFechaNacimiento"
+                    android:layout_width="110dp"
+                    android:layout_height="36dp"
+                    android:hint="22/08/1999"
+                    android:inputType="date"
+                    android:background="@color/white"
+                    android:gravity="center"
+                    android:layout_marginTop="4dp"
+                    android:paddingStart="8dp"/>
+            </LinearLayout>
+        </LinearLayout>
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginStart="56dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:padding="16dp">
-
-                <!-- Edad -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/edad"
-                        android:textSize="14sp"
-                        android:textColor="@color/letras"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/etEdad"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="26"
-                        android:inputType="number"
-                        android:background="@android:drawable/editbox_background"/>
-
-                </LinearLayout>
-
-                <!-- Fecha de nacimiento -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/fecha_de_nacimiento"
-                        android:textSize="14sp"
-                        android:textColor="@color/letras"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/etFechaNacimiento"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="22/08/1999"
-                        android:inputType="date"
-                        android:background="@android:drawable/editbox_background"/>
-
-                </LinearLayout>
+                android:padding="12dp">
 
                 <!-- Nombre -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:text="Nombre:"
+                    android:textSize="14sp"
+                    android:textColor="@color/letras"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="4dp"/>
+
+                <EditText
+                    android:id="@+id/etNombre"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
+                    android:hint="Samuel Salasar."
                     android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nombre:"
-                        android:textSize="14sp"
-                        android:textColor="@color/letras"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/etNombre"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="Samuel Salasar."
-                        android:background="@android:drawable/editbox_background"/>
-
-                </LinearLayout>
+                    android:paddingStart="12dp"
+                    android:layout_marginBottom="10dp"/>
 
                 <!-- Apellido -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:text="Apellido:"
+                    android:textSize="14sp"
+                    android:textColor="@color/letras"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="4dp"/>
+
+                <EditText
+                    android:id="@+id/etApellido"
+                    android:layout_width="220dp"
+                    android:layout_height="40dp"
+                    android:hint="Martínez Linares"
                     android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Apellido:"
-                        android:textSize="14sp"
-                        android:textColor="@color/letras"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/etApellido"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="Martínez Linares"
-                        android:background="@android:drawable/editbox_background"/>
-
-                </LinearLayout>
+                    android:paddingStart="12dp"
+                    android:layout_marginBottom="10dp"/>
 
                 <!-- Teléfono -->
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <TextView
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
+                    android:text="Teléfono:"
+                    android:textSize="14sp"
+                    android:textColor="@color/letras"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="4dp"/>
+
+                <EditText
+                    android:id="@+id/etTelefono"
+                    android:layout_width="180dp"
+                    android:layout_height="40dp"
+                    android:hint="7877-8888"
+                    android:inputType="phone"
                     android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/tel_fono"
-                        android:textSize="14sp"
-                        android:textColor="@color/letras"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/etTelefono"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="7877-8888"
-                        android:inputType="phone"
-                        android:background="@android:drawable/editbox_background"/>
-
-                </LinearLayout>
+                    android:paddingStart="12dp"
+                    android:layout_marginBottom="10dp"/>
 
                 <!-- Correo -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Correo:"
+                    android:textSize="14sp"
+                    android:textColor="@color/letras"
+                    android:textStyle="italic"
+                    android:layout_marginBottom="4dp"/>
+
+                <EditText
+                    android:id="@+id/etCorreo"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:hint="SamuelMartinez@gmail.com"
+                    android:inputType="textEmailAddress"
+                    android:background="@color/white"
+                    android:paddingStart="12dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <!-- Ratio -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/correo"
+                        android:text="Ratio"
                         android:textSize="14sp"
                         android:textColor="@color/letras"
-                        android:textStyle="bold"/>
-
-                    <EditText
-                        android:id="@+id/etCorreo"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:hint="SamuelMartinez@gmail.com"
-                        android:inputType="textEmailAddress"
-                        android:background="@android:drawable/editbox_background"/>
-
-                </LinearLayout>
-
-                <!-- Ratio Sensible (Spinner) -->
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Ratio Sensible ▼"
-                        android:textSize="14sp"
-                        android:textColor="@color/letras"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp"/>
+                        android:textStyle="italic"
+                        android:layout_marginEnd="8dp"/>
 
                     <Spinner
                         android:id="@+id/spinnerRatio"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:background="@android:drawable/editbox_background"/>
-
+                        android:layout_width="140dp"
+                        android:layout_height="36dp"
+                        android:background="@color/white"
+                        android:entries="@array/ratio_sensible"
+                        android:enabled="true"
+                        />
                 </LinearLayout>
 
-                <!-- Tipo de diabetes (Spinner) -->
+                <!-- Tipo de diabetes -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tipo de diabetes: ▼"
+                        android:text="Tipo de diabetes:"
                         android:textSize="14sp"
                         android:textColor="@color/letras"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp"/>
+                        android:textStyle="italic"
+                        android:layout_marginEnd="8dp"/>
 
                     <Spinner
                         android:id="@+id/spinnerTipoDiabetes"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:background="@android:drawable/editbox_background"/>
-
+                        android:layout_width="110dp"
+                        android:layout_height="36dp"
+                        android:background="@color/white"
+                        android:entries="@array/tipos_diabetes"
+                        android:enabled="true"
+                        />
                 </LinearLayout>
 
-                <!-- Sensibilidad (Spinner) -->
+                <!-- Sensibilidad -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sensibilidad: ▼"
+                        android:text="Sensibilidad:"
                         android:textSize="14sp"
                         android:textColor="@color/letras"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp"/>
+                        android:textStyle="italic"
+                        android:layout_marginEnd="8dp"/>
 
                     <Spinner
                         android:id="@+id/spinnerSensibilidad"
-                        android:layout_width="match_parent"
-                        android:layout_height="48dp"
-                        android:background="@android:drawable/editbox_background"/>
-
+                        android:layout_width="150dp"
+                        android:layout_height="36dp"
+                        android:background="@color/white"
+                        android:entries="@array/sensibilidad"
+                        android:enabled="true"/>
                 </LinearLayout>
 
                 <!-- Glucosa objetivo -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="10dp">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -296,80 +287,146 @@
                         android:text="Glucosa objetivo"
                         android:textSize="14sp"
                         android:textColor="@color/letras"
-                        android:textStyle="bold"/>
+                        android:textStyle="italic"
+                        android:layout_marginEnd="8dp"/>
 
                     <EditText
                         android:id="@+id/etGlucosaObjetivo"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
+                        android:layout_width="120dp"
+                        android:layout_height="36dp"
                         android:hint="120 mg/dL"
                         android:inputType="number"
-                        android:background="@android:drawable/editbox_background"/>
-
+                        android:background="@color/white"
+                        android:paddingStart="12dp"/>
                 </LinearLayout>
 
                 <!-- Factor de sensibilidad -->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:background="@color/white"
-                    android:padding="12dp"
-                    android:layout_marginBottom="12dp"
-                    android:elevation="2dp">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="16dp">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
+                        android:text="Factor de sensibilidad"
+                        android:textSize="14sp"
+                        android:textColor="@color/letras"
+                        android:textStyle="italic"
+                        android:layout_marginEnd="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvFactorResultado"
+                        android:layout_width="0dp"
+                        android:layout_height="36dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:background="@color/white"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="8dp">
-
-                        <TextView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="Factor de sensibilidad"
-                            android:textSize="14sp"
-                            android:textColor="@color/letras"
-                            android:textStyle="bold"/>
-
-                        <ImageButton
-                            android:id="@+id/btnInfoFactor"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:src="@drawable/logo"
-                            android:background="@android:color/transparent"
-                            android:contentDescription="@string/informaci_n"/>
-                    </LinearLayout>
+                        android:paddingStart="8dp"
+                        android:hint="--"
+                        android:textColor="@color/letras"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
 
                     <Button
-                        android:id="@+id/btnCalcularFactor"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp"
-                        android:text="@string/calcular"
-                        android:backgroundTint="@color/fondo"
-                        android:textColor="@color/black"/>
+                        android:id="@+id/btnIrFactor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="36dp"
+                        android:text="Calcular ›"
+                        android:backgroundTint="@color/fondo3"
+                        android:textColor="@color/white"
+                        android:textSize="12sp"
+                        />
+                </LinearLayout>
+                <!-- Botones Cancelar y Guardar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="8dp">
 
+                    <Button
+                        android:id="@+id/btnCancelar"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginEnd="8dp"
+                        android:text="Cancelar"
+                        android:backgroundTint="@color/white"
+                        android:textColor="@color/letras"
+                        android:textSize="14sp"/>
+
+                    <Button
+                        android:id="@+id/btnGuardar"
+                        android:layout_width="0dp"
+                        android:layout_height="48dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Guardar"
+                        android:backgroundTint="@color/fondo3"
+                        android:textColor="@color/white"
+                        android:textSize="14sp"/>
                 </LinearLayout>
 
-                <!-- Botón Guardar -->
-                <Button
-                    android:id="@+id/btnGuardar"
-                    android:layout_width="match_parent"
-                    android:layout_height="48dp"
-                    android:text="@string/guardar_perfil"
-                    android:backgroundTint="#4CAF50"
-                    android:textColor="@color/white"
-                    android:textSize="16sp"/>
-
             </LinearLayout>
-
         </ScrollView>
 
+        <!-- Pie de página -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/fondo3"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_marginStart="56dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Correo de asistencia"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Teléfono"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:gravity="center"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="16dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Redes"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:textStyle="italic"
+                android:gravity="center"/>
+        </LinearLayout>
     </LinearLayout>
 
-    <!-- Menú lateral -->
+    <!-- Menú lateral izquierdo -->
     <LinearLayout
         android:layout_width="56dp"
         android:layout_height="match_parent"
@@ -388,7 +445,7 @@
             android:src="@drawable/logo"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:contentDescription="@string/usuario"/>
+            android:contentDescription="Usuario"/>
 
         <ImageButton
             android:id="@+id/menuInformacion"
@@ -398,7 +455,7 @@
             android:src="@drawable/imformacion"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:contentDescription="@string/informaci_n"/>
+            android:contentDescription="Información"/>
 
         <ImageButton
             android:id="@+id/menuInstitucion"
@@ -438,7 +495,7 @@
             android:src="@drawable/telefono"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:contentDescription="@string/tel_fono"/>
+            android:contentDescription="Teléfono"/>
 
         <ImageButton
             android:id="@+id/menuCamara"
@@ -448,7 +505,6 @@
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
             android:contentDescription="Cámara"/>
-
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>
