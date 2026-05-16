@@ -9,5 +9,6 @@
     <color name="letras2">  #888888</color>
     <color name="letrasdes">#666666</color>
     <color name="fondodes"> #F0F0F0</color>
-
+    <color name="botones1">#FFFBA7</color>
+    <color name="botones2">#BFFDFF</color>
 </resources>
