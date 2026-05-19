@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/fondo"
+    android:padding="20dp"
+    tools:context=".agregar_agenda">
+
+    <!-- Fila 1: Día y Fecha -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <!-- Día -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Día"
+                android:textSize="14sp"
+                android:textColor="@color/letras"
+                android:textStyle="italic"
+                android:layout_marginBottom="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerDiaDialog"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:paddingStart="8dp"
+                android:entries="@array/dias_semana"/>
+        </LinearLayout>
+
+        <!-- Fecha -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fecha"
+                android:textSize="14sp"
+                android:textColor="@color/letras"
+                android:textStyle="italic"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etFecha"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="DD/MM/AAAA"
+                android:inputType="date"
+                android:background="@color/white"
+                android:paddingStart="8dp"
+                android:textSize="13sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Fila 2: Hora, Am/Pm, Urgencia -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <!-- Hora -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hora"
+                android:textSize="14sp"
+                android:textColor="@color/letras"
+                android:textStyle="italic"
+                android:layout_marginBottom="4dp"/>
+
+            <EditText
+                android:id="@+id/etHora"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:hint="10:30"
+                android:inputType="time"
+                android:background="@color/white"
+                android:paddingStart="8dp"
+                android:textSize="13sp"/>
+        </LinearLayout>
+
+        <!-- Am/Pm -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginEnd="8dp"
+            android:gravity="bottom">
+
+            <Spinner
+                android:id="@+id/spinnerAmPm"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:paddingStart="8dp"
+                android:entries="@array/am_pm"
+                android:layout_marginTop="20dp"/>
+        </LinearLayout>
+
+        <!-- Urgencia -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Urgencia"
+                android:textSize="14sp"
+                android:textColor="@color/letras"
+                android:textStyle="italic"
+                android:layout_marginBottom="4dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerUrgencia"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@color/white"
+                android:paddingStart="8dp"
+                android:entries="@array/urgencia"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Descripción -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Descripción"
+        android:textSize="14sp"
+        android:textColor="@color/letras"
+        android:textStyle="italic"
+        android:layout_marginBottom="4dp"/>
+
+    <EditText
+        android:id="@+id/etDescripcion"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@color/white"
+        android:inputType="textMultiLine"
+        android:gravity="top|start"
+        android:paddingStart="8dp"
+        android:paddingTop="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Botones Cancelar y Guardar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end">
+
+        <Button
+            android:id="@+id/btnCancelarDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:layout_marginEnd="8dp"
+            android:text="Cancelar"
+            android:textSize="13sp"
+            android:textColor="@color/letras"
+            android:textStyle="italic"
+            android:backgroundTint="@color/white"
+            app:cornerRadius="16dp"/>
+
+        <Button
+            android:id="@+id/btnGuardarDialog"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Guardar"
+            android:textSize="13sp"
+            android:textColor="@color/letras"
+            android:textStyle="italic"
+            android:backgroundTint="@color/fondo2"
+            app:cornerRadius="16dp"/>
+    </LinearLayout>
+
+</LinearLayout>
