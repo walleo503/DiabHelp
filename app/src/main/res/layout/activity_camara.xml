@@ -1,126 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".camara">
 
-    <!-- Contenido principal -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:background="@color/fondo">
 
-        <!-- Título -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Cámara"
-            android:textSize="18sp"
-            android:textColor="@color/letras"
-            android:textStyle="bold"
-            android:padding="16dp"
-            android:layout_marginStart="56dp"
-            android:background="@color/fondo2"
-            android:gravity="center_vertical"/>
-
-        <!-- Área central -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="56dp"
-            android:padding="20dp"
-            android:gravity="top|center_horizontal">
-
-            <!-- Marco de la cámara (cuadrado) - SUBIDO -->
-            <FrameLayout
-                android:layout_width="280dp"
-                android:layout_height="280dp"
-                android:background="@drawable/marco_camara"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="20dp">
-
-            </FrameLayout>
-
-            <!-- Botón Tomar foto - SUBIDO -->
-            <Button
-                android:id="@+id/btnTomarFoto"
-                android:layout_width="160dp"
-                android:layout_height="50dp"
-                android:text="Tomar foto"
-                android:textSize="16sp"
-                android:textColor="@color/black"
-                android:textStyle="bold"
-                android:backgroundTint="@color/white"
-                app:cornerRadius="25dp"/>
-
-        </LinearLayout>
-
-        <!-- Pie de página -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@color/fondo3"
-            android:padding="10dp"
-            android:gravity="center"
-            android:layout_marginStart="56dp">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Correo de asistencia"
-                android:textSize="11sp"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                android:gravity="center"/>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="16dp"
-                android:background="@color/white"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Teléfono"
-                android:textSize="11sp"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                android:gravity="center"/>
-
-            <View
-                android:layout_width="1dp"
-                android:layout_height="16dp"
-                android:background="@color/white"/>
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Redes"
-                android:textSize="11sp"
-                android:textColor="@color/white"
-                android:textStyle="italic"
-                android:gravity="center"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <!-- Menú lateral izquierdo -->
+    <!-- ── MENÚ LATERAL FIJO (siempre visible) ── -->
     <LinearLayout
         android:layout_width="56dp"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
         android:orientation="vertical"
         android:background="@color/fondo2"
         android:paddingTop="16dp"
@@ -135,17 +28,17 @@
             android:src="@drawable/logo"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:contentDescription="@string/usuario"/>
+            android:contentDescription="Usuario"/>
 
         <ImageButton
-            android:id="@+id/menuInformacion"
+            android:id="@+id/menuFavoritos"
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_marginBottom="16dp"
-            android:src="@drawable/imformacion"
+            android:src="@drawable/calendario"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:contentDescription="@string/informaci_n"/>
+            android:contentDescription="Favoritos"/>
 
         <ImageButton
             android:id="@+id/menuInstitucion"
@@ -185,7 +78,7 @@
             android:src="@drawable/telefono"
             android:background="@android:color/transparent"
             android:scaleType="centerInside"
-            android:contentDescription="@string/tel_fono"/>
+            android:contentDescription="Teléfono"/>
 
         <ImageButton
             android:id="@+id/menuCamara"
@@ -198,4 +91,108 @@
 
     </LinearLayout>
 
-</androidx.drawerlayout.widget.DrawerLayout>
+
+    <!-- Contenido principal -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/fondo">
+
+        <!-- Título -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cámara"
+            android:textSize="18sp"
+            android:textColor="@color/letras"
+            android:textStyle="bold"
+            android:padding="16dp"
+            android:background="@color/fondo2" />
+
+        <!-- Área central -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:gravity="top|center_horizontal">
+
+            <!-- Marco de la cámara (cuadrado) - SUBIDO -->
+            <FrameLayout
+                android:layout_width="280dp"
+                android:layout_height="280dp"
+                android:background="@drawable/marco_camara"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp">
+
+            </FrameLayout>
+
+            <!-- Botón Tomar foto - SUBIDO -->
+            <Button
+                android:id="@+id/btnTomarFoto"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:text="Tomar foto"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:backgroundTint="@color/white"
+                app:cornerRadius="25dp"/>
+
+        </LinearLayout>
+
+        <!-- Footer -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:background="@color/fondo3"
+            android:padding="8dp"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Correo de asistencia"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Teléfono"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+            <View
+                android:layout_width="1dp"
+                android:layout_height="20dp"
+                android:background="@color/white"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Redes"
+                android:textSize="11sp"
+                android:textColor="@color/white"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>

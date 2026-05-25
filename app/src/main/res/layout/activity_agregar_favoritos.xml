@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/pantalla_emergente"
+    android:padding="24dp">
+
+    <!-- Producto -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Producto"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/etProducto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:padding="6dp"/>
+
+    </LinearLayout>
+
+    <!-- Carbohidratos totales -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Carbohidratos totales"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"
+            android:layout_marginEnd="8dp"/>
+
+        <EditText
+            android:id="@+id/etCarbohidratos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:color/white"
+            android:inputType="numberDecimal"
+            android:padding="6dp"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="g"
+            android:textSize="14sp"
+            android:textColor="@color/letras"
+            android:layout_marginStart="4dp"/>
+
+    </LinearLayout>
+
+    <!-- Ratio -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ratio"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="g Calorías / 10g"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="gramos(g)"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"/>
+
+    </LinearLayout>
+
+    <!-- Insulina necesaria -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="20dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insulina necesaria"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/tvInsulinaCalculada"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Ratio calculado"
+            android:textSize="12sp"
+            android:textStyle="italic"
+            android:textColor="@color/letras"
+            android:background="@android:color/white"
+            android:padding="6dp"/>
+
+    </LinearLayout>
+
+    <!-- Botones Cancelar / Guardar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/btnCancelar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:text="Cancelar"
+            android:textColor="@color/letras"
+            android:textStyle="italic"
+            android:backgroundTint="@android:color/white"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            app:cornerRadius="20dp"/>
+
+        <Button
+            android:id="@+id/btnGuardar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guardar"
+            android:textColor="@color/letras"
+            android:textStyle="italic"
+            android:backgroundTint="@android:color/white"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            app:cornerRadius="20dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

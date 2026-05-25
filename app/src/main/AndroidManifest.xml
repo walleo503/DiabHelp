@@ -13,6 +13,9 @@
         android:theme="@style/Theme.DiabHelp"
         tools:targetApi="31">
         <activity
+            android:name=".agregar_favoritos"
+            android:exported="false" />
+        <activity
             android:name=".camara"
             android:exported="false" />
         <activity
@@ -47,7 +50,7 @@
             android:name=".Perfil_editar"
             android:exported="false" />
         <activity
-            android:name=".Imformacionydemas"
+            android:name=".Favoritos"
             android:exported="false" />
         <activity
             android:name=".Crear_Usuario"

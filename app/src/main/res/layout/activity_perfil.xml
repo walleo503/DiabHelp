@@ -1,13 +1,95 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.drawerlayout.widget.DrawerLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     tools:context=".Perfil"
     >
+
+    <!-- ── MENÚ LATERAL FIJO (siempre visible) ── -->
+    <LinearLayout
+        android:layout_width="56dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/fondo2"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:gravity="top|center_horizontal">
+
+        <ImageButton
+            android:id="@+id/menuUsuario"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/logo"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Usuario"/>
+
+        <ImageButton
+            android:id="@+id/menuFavoritos"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/calendario"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Favoritos"/>
+
+        <ImageButton
+            android:id="@+id/menuInstitucion"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/institucion"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Institución"/>
+
+        <ImageButton
+            android:id="@+id/menuCalculadora"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/calculadora"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Calculadora"/>
+
+        <ImageButton
+            android:id="@+id/menuCalendario"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/calendario"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Calendario"/>
+
+        <ImageButton
+            android:id="@+id/menuTelefono"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="16dp"
+            android:src="@drawable/telefono"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Teléfono"/>
+
+        <ImageButton
+            android:id="@+id/menuCamara"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/camara"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:contentDescription="Cámara"/>
+
+    </LinearLayout>
 
     <!-- Contenido principal -->
     <LinearLayout
@@ -22,8 +104,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:gravity="center_vertical"
-            android:padding="12dp"
-            android:layout_marginStart="56dp">
+            android:padding="12dp">
 
             <!-- Edad -->
             <LinearLayout
@@ -102,8 +183,7 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:layout_marginStart="56dp">
+            android:layout_weight="1">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -364,9 +444,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/fondo3"
-            android:padding="10dp"
+            android:padding="8dp"
             android:gravity="center"
-            android:layout_marginStart="56dp">
+            >
 
             <TextView
                 android:layout_width="0dp"
@@ -410,85 +490,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <!-- Menú lateral izquierdo -->
-    <LinearLayout
-        android:layout_width="56dp"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
-        android:orientation="vertical"
-        android:background="@color/fondo2"
-        android:paddingTop="16dp"
-        android:paddingBottom="16dp"
-        android:gravity="top|center_horizontal">
 
-        <ImageButton
-            android:id="@+id/menuUsuario"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/logo"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Usuario"/>
 
-        <ImageButton
-            android:id="@+id/menuInformacion"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/imformacion"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Información"/>
-
-        <ImageButton
-            android:id="@+id/menuInstitucion"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/institucion"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Institución"/>
-
-        <ImageButton
-            android:id="@+id/menuCalculadora"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/calculadora"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Calculadora"/>
-
-        <ImageButton
-            android:id="@+id/menuCalendario"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/calendario"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Calendario"/>
-
-        <ImageButton
-            android:id="@+id/menuTelefono"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_marginBottom="16dp"
-            android:src="@drawable/telefono"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Teléfono"/>
-
-        <ImageButton
-            android:id="@+id/menuCamara"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:src="@drawable/camara"
-            android:background="@android:color/transparent"
-            android:scaleType="centerInside"
-            android:contentDescription="Cámara"/>
-    </LinearLayout>
-
-</androidx.drawerlayout.widget.DrawerLayout>
+</LinearLayout>

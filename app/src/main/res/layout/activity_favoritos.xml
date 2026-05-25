@@ -3,12 +3,11 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal"
-    tools:context=".llamadas">
-
+    tools:context=".agregar_favoritos"
+    >
 
     <!-- ── MENÚ LATERAL FIJO (siempre visible) ── -->
     <LinearLayout
@@ -91,8 +90,7 @@
 
     </LinearLayout>
 
-
-    <!-- Contenido principal -->
+    <!-- ── CONTENIDO PRINCIPAL ── -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -103,78 +101,157 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Llamadas"
+            android:text="Información de usos y demás"
             android:textSize="16sp"
             android:textColor="@color/letras"
             android:textStyle="bold"
-            android:padding="8dp"
+            android:padding="16dp"
             android:background="@color/fondo2"/>
 
-        <!-- Área central -->
+        <!-- Botón Agregar -->
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="56dp"
-            android:padding="16dp"
-            android:gravity="top|end">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp">
 
-            <!-- Icono info arriba derecha -->
-            <ImageButton
-                android:id="@+id/btnInfo"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:src="@drawable/imformacion"
-                android:background="@android:color/transparent"
-                android:scaleType="centerInside"
-                android:contentDescription="Información"
-                android:layout_gravity="end"
-                android:layout_marginBottom="16dp"/>
-
-            <!-- Botón grande circular de alerta -->
-            <LinearLayout
-                android:layout_width="match_parent"
+            <Button
+                android:id="@+id/btnAgregar"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center">
-
-                <ImageButton
-                    android:id="@+id/btnAlerta"
-                    android:layout_width="160dp"
-                    android:layout_height="160dp"
-                    android:layout_marginBottom="24dp"
-                    android:background="@drawable/boton_circular"
-                    android:contentDescription="Llamada de emergencia"
-                    android:elevation="4dp"
-                    android:scaleType="centerInside"
-                    android:src="@drawable/sirena" />
-
-                <!-- Botón Agregar -->
-                <Button
-                    android:id="@+id/btnAgregar"
-                    android:layout_width="140dp"
-                    android:layout_height="40dp"
-                    android:text="Agregar"
-                    android:textSize="15sp"
-                    android:textColor="@color/letras"
-                    android:textStyle="italic"
-                    android:backgroundTint="@color/white"
-                    app:cornerRadius="20dp"/>
-
-            </LinearLayout>
+                android:text="Agregar"
+                android:textColor="@color/letras"
+                android:textStyle="italic"
+                android:backgroundTint="@android:color/white"
+                android:paddingStart="32dp"
+                android:paddingEnd="32dp"
+                app:cornerRadius="20dp"/>
 
         </LinearLayout>
 
-        <!-- Pie de página -->
+        <!-- Buscar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Buscar"
+                android:textSize="14sp"
+                android:textStyle="italic"
+                android:textColor="@color/letras"
+                android:layout_marginEnd="8dp"/>
+
+            <EditText
+                android:id="@+id/etBuscar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@android:color/white"
+                android:padding="6dp"/>
+
+        </LinearLayout>
+
+        <!-- Filtros -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            android:gravity="center_vertical">
+
+            <Spinner
+                android:id="@+id/spinnerOrden"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/letras"
+                android:layout_marginEnd="16dp"/>
+
+            <Spinner
+                android:id="@+id/spinnerAZ"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/letras"/>
+
+        </LinearLayout>
+
+        <!-- Encabezado de tabla -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="4dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Producto"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:textColor="@color/letras"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Carbohidratos"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:textColor="@color/letras"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Ratio"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:textColor="@color/letras"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:text="Insulina"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                android:textColor="@color/letras"/>
+
+        </LinearLayout>
+
+        <!-- Lista de productos -->
+        <ListView
+            android:id="@+id/listViewFavoritos"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="4dp"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"/>
+
+        <!-- Footer -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:background="@color/fondo3"
             android:padding="8dp"
-            android:gravity="center"
-            android:layout_marginStart="56dp">
+            android:gravity="center">
 
             <TextView
                 android:layout_width="0dp"
@@ -183,12 +260,11 @@
                 android:text="Correo de asistencia"
                 android:textSize="11sp"
                 android:textColor="@color/white"
-                android:textStyle="italic"
                 android:gravity="center"/>
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="16dp"
+                android:layout_height="20dp"
                 android:background="@color/white"/>
 
             <TextView
@@ -198,12 +274,11 @@
                 android:text="Teléfono"
                 android:textSize="11sp"
                 android:textColor="@color/white"
-                android:textStyle="italic"
                 android:gravity="center"/>
 
             <View
                 android:layout_width="1dp"
-                android:layout_height="16dp"
+                android:layout_height="20dp"
                 android:background="@color/white"/>
 
             <TextView
@@ -213,11 +288,10 @@
                 android:text="Redes"
                 android:textSize="11sp"
                 android:textColor="@color/white"
-                android:textStyle="italic"
                 android:gravity="center"/>
+
         </LinearLayout>
 
     </LinearLayout>
-
 
 </LinearLayout>
